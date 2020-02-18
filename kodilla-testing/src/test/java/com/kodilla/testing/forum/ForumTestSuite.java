@@ -6,7 +6,7 @@ import org.junit.*;
 public class ForumTestSuite {
     @Before
     public void before(){
-        System.out.println("test Case: begin");
+        System.out.println("Test Case: begin");
     }
     @After
     public void after(){
@@ -18,15 +18,15 @@ public class ForumTestSuite {
     }
     @AfterClass
     public static void afterClass(){
-        System.out.println("Test Suite: end:");
+        System.out.println("Test Suite: end");
     }
     @Test
-    public void testCaseUserName(){
+    public void testCaseUsername(){
         //Given
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
         //When
         String result = simpleUser.getUsername();
-        System.out.println("Test" + result);
+        System.out.println("Testing " + result);
         //Then
         Assert.assertEquals("theForumUser", result);
     }
@@ -36,7 +36,7 @@ public class ForumTestSuite {
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
         //When
         String result = simpleUser.getRealName();
-        System.out.println("Testing" + result);
+        System.out.println("Testing " + result);
         //Then
         Assert.assertEquals("John Smith", result);
     }
