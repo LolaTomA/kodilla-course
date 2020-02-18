@@ -1,32 +1,19 @@
 package com.kodilla.testing;
 
 import com.kodilla.testing.calculator.Calculator;
-import user.SimpleUser;
 
 public class TestingMain {
     public static void main(String[] args) {
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
-        String result = simpleUser.getUsername();
-
-        if (result.equals("theForumUser")) {
-            System.out.println("test OK");
+        Calculator calculate = new Calculator();
+        int result = calculate.addAToB(8,3);
+        if (result == 11){
+            System.out.println("Test Ok");
         } else {
             System.out.println("Error!");
         }
-
-        Calculator calculator = new Calculator();
-        int sum = calculator.add(5, 3);
-
-        if (sum == 8) {
-            System.out.println("test Ok");
-        } else {
-            System.out.println("Error!");
-        }
-
-        int calcsubt = calculator.subtract(5, 3);
-
-        if (calcsubt == 2) {
-            System.out.println("test Ok");
+        result = calculate.subtractBFromA(8,3);
+        if (result == 5){
+            System.out.println("Test Ok");
         } else {
             System.out.println("Error!");
         }
