@@ -156,4 +156,19 @@ public class ForumStatisticsTestSuite {
         Assert.assertEquals(0.0, forumStatistics.getAvgCommentPerPost(),0.001);
     }
     // Test when there is 100 users is already done in previous cases.
+    @Test
+    public void showStatistics(){
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+
+        when(statisticsMock.usersNames()).thenReturn(generateUsers(110));
+        when(statisticsMock.postsCount()).thenReturn(1100);
+        when(statisticsMock.commentsCount()).thenReturn(11000);
+
+        ForumStatistics forumStatistics = new ForumStatistics();
+        //When
+        forumStatistics.calculateAdvStatistics(statisticsMock);
+        //Then
+        forumStatistics.showStatistics() ;
+    }
 }

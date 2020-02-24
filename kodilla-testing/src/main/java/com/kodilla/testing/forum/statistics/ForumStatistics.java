@@ -19,14 +19,12 @@ public class ForumStatistics {
         if (usersNumber != 0) {
             avgPostPerUser = postsNumber / (double) usersNumber;
             avgCommentPerUser = commentsNumber / (double) usersNumber;
+            if (postsNumber != 0) {
+                avgCommentPerPost = commentsNumber /(double) postsNumber;
+            }
         } else {
             avgCommentPerUser = 0.0;
             avgPostPerUser = 0.0;
-        }
-
-        if (postsNumber != 0) {
-            avgCommentPerPost = commentsNumber /(double) postsNumber;
-        } else {
             avgCommentPerPost = 0.0;
         }
 
