@@ -25,11 +25,13 @@ public class ShapeCollectorTestSuite {
     @Test //czy doda figure do listy
     public void testAddFigure() {
         //Given
-        ShapeCollector figure = new ShapeCollector();
+        ShapeCollector shapes = new ShapeCollector();
+        Square square =new Square(3.0);
         //When
-        figure.addFigure(new Square(3.0));
+        shapes.addFigure(square);
         //Then
-        Assert.assertEquals(1, figure.shapeCollection.size());
+        Assert.assertEquals(1, shapes.shapeCollection.size());
+        Assert.assertEquals(square, shapes.getFigure(0));
     }
     @Test//czy usuwa figure z listy
     public void testRemoveFigure() {
@@ -62,14 +64,14 @@ public class ShapeCollectorTestSuite {
         figure.addFigure(triangle);
         figure.addFigure(circle);
         //When
-        figure.getFigure(0);
-        figure.getFigure(1);
-        figure.getFigure(2);
+        Shape fig1 = figure.getFigure(0);
+        Shape fig2 = figure.getFigure(1);
+        Shape fig3 = figure.getFigure(2);
         //Then
         Assert.assertEquals(3,figure.shapeCollection.size());
-        Assert.assertEquals(square, figure.getFigure(0));
-        Assert.assertEquals(triangle, figure.getFigure(1));
-        Assert.assertEquals(circle, figure.getFigure(2));
+        Assert.assertEquals(square, fig1);
+        Assert.assertEquals(triangle, fig2);
+        Assert.assertEquals(circle, fig3);
     }
     @Test// wydruk listy figur
     public void testShowFigures() {
