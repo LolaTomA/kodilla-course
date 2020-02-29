@@ -133,7 +133,7 @@ public class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBooksInHandsOf(user))
                 .thenReturn(resultListOf1Books);
         // When
-        List<Book> theListOfBooks1 = bookLibrary.listBooksInHandsOf(user);
+        List<Book> theListOfBooks1 = bookLibrary.listBooksInHandsOf(user));
         // Then
         assertEquals(1, theListOfBooks1.size());
     }
