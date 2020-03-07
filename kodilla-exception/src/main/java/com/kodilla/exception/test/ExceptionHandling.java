@@ -9,9 +9,13 @@ public class ExceptionHandling {
             secondChallenge.probablyIWillThrowException(3.0, 2.0);
 
         } catch (Exception e) {
+
             System.out.println("Oops! Mistake!!! ");
-    }  finally {
+
+        }  finally {
+
             System.out.println("Ok. End of task.");
+
         }
-        }
+    }
 }
