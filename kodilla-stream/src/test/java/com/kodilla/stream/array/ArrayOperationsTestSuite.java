@@ -18,9 +18,9 @@ public class ArrayOperationsTestSuite {
         numbers[4]= 20;
 
         //When
-        getAverage(numbers);
+        double average = getAverage(numbers);
 
         //Then
-        Assert.assertEquals(10.0, getAverage(numbers), 0.001);
+        Assert.assertEquals(10.0, average, 0.001);
     }
 }
