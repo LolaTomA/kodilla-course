@@ -9,8 +9,7 @@ public class StreamMain {
         MovieStore polishTitles = new MovieStore();
 
         titlesList = polishTitles.getMovies().entrySet().stream()
-                    .map(list -> list.getValue().stream())
-                    .flatMap(film -> film)
+                    .flatMap(list -> list.getValue().stream())
                     .collect(Collectors.joining("! ", "", "!"));
 
         System.out.println(titlesList);
