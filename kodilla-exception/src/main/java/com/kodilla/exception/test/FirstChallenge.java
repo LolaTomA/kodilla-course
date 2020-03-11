@@ -23,7 +23,7 @@ public class FirstChallenge {
 
         } catch (ArithmeticException e)  {
 
-            System.out.println("Oh no! Something went wrong!" + e );
+            System.out.println("Oh no! Something went wrong! " + e );
 
         } finally {
 
