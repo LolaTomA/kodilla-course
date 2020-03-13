@@ -1,17 +1,17 @@
 package com.kodilla.good.patterns.challenges;
 
-import java.time.LocalDateTime;
 
 public class OrderRequestRetriever {
-    public OrderRequest retrieve(){
-        User user = new User("John","Smith");
 
-        LocalDateTime  orderDate = LocalDateTime.of(2020, 2, 14, 12, 15);
+    public OrderRequest retrieve() {
 
-        String product = "Buty";
-        System.out.println(user.toString() + " ordered: " + product);
+        OrderRepository orderRepository = new OrderRepository();
 
-     return new OrderRequest(user, orderDate, product);
+        OrderRequest orderRequest = orderRepository.createOrder();
+
+        System.out.println( orderRequest.getUser() + " ordered: " + orderRequest.getProduct());
+
+     return orderRequest;
     }
 
 }
