@@ -11,7 +11,7 @@ public class OrderRepository {
     public OrderRequest createOrder() {
 
         User user = new User("John", "Smith");
-        LocalDateTime orderDate = LocalDateTime.of( 2020, 02, 14, 12,15);
+        LocalDateTime orderDate = LocalDateTime.of( 2020, 2, 14, 12,15);
         String product = "Shoes";
 
         OrderRequest orderRequest = new OrderRequest(user, orderDate, product);
