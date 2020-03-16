@@ -1,8 +1,9 @@
 package com.kodilla.good.patterns.task134;
 
-public class Producer {
+public abstract class Producer {
     final String producerName;
     final String producerAddress;
+
 
     public Producer(final String producerName, final String producerAddress) {
         this.producerName = producerName;
@@ -20,5 +21,6 @@ public class Producer {
     public String toString() {
         return producerName + " address: " + producerAddress;
     }
-    
+
+    public abstract boolean process();
 }
