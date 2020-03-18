@@ -4,7 +4,6 @@ public abstract class Producer {
     final String producerName;
     final String producerAddress;
 
-
     public Producer(final String producerName, final String producerAddress) {
         this.producerName = producerName;
         this.producerAddress = producerAddress;
@@ -22,5 +21,5 @@ public abstract class Producer {
         return producerName + " address: " + producerAddress;
     }
 
-    public abstract boolean process();
+    public abstract boolean process(Product product);
 }

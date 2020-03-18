@@ -6,16 +6,14 @@ public class ExtraFoodShop extends Producer {
         super("ExtraFoodShop ", "Kowale 10 ");
     }
 
-    Product product;
-    int quantity = product.getQuantity();
-
     @Override
-    public boolean process() {
-        if(quantity % 6 == 0){
-            System.out.println("Always fresh eggs. Thank you for order");
-            return true;
+    public boolean process(Product product) {
+        if(product.getQuantity() % 6 == 0) {
+           System.out.println("Always fresh eggs. Thank you for order");
+           return true;
+        } else {
+            System.out.println("Sorry! Your order\'s quantity must be multiple 6.");
+            return false;
         }
-        System.out.println("Sorry! Your order\'s quantity must be multiple 6.");
-        return false;
     }
 }

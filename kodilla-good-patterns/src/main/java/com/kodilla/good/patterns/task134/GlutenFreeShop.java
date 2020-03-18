@@ -6,17 +6,14 @@ public class GlutenFreeShop extends Producer {
         super("GlutenFreeShop ", "Tropy 7 ");
     }
 
-    Product product;
-    int quantity = product.getQuantity();
-
     @Override
-    public boolean process() {
-        if(quantity >= 1){
+    public boolean process(Product product) {
+        if(product.getQuantity() >= 1) {
             System.out.println("GlutenFreeShop welcomes You. ");
             return true;
+        } else {
+            System.out.println("You have not ordered anything. ");
+            return false;
         }
-
-System.out.println("You have not ordered anything. ");
-        return false;
     }
 }
