@@ -4,9 +4,8 @@ import java.util.*;
 
 public class FlightService {
 
-
-
     public HashSet<Flight> getFlights() {
+
         Set<Flight> flights = new HashSet<>();
 
         flights.add(new Flight("WAW", "GDN"));

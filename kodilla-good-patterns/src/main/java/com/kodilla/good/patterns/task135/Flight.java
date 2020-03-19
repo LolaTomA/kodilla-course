@@ -29,4 +29,9 @@ public final class Flight {
         return this.flightFrom.equals(flight.getFlightFrom()) &&
                this.flightTo.equals(flight.getFlightTo());
     }
+
+    @Override
+    public String toString() {
+        return flightFrom + " " + flightTo;
+    }
 }
