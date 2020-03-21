@@ -11,10 +11,10 @@ public class SearchFlight {
         Map<String, Boolean> airportReady = new HashMap<>();
 
         airportReady.put("Warsaw", true);
-        airportReady.put(("Wroclaw", true);
+        //airportReady.put(("Wroclaw", true);
         airportReady.put("Gdansk", true);
         airportReady.put("Krakow", true);
-        airportReady.put(("Rome", false);
+        //airportReady.put(("Rome", false);
         airportReady.put("Milan", false);
         airportReady.put("Beijing", false);
 
