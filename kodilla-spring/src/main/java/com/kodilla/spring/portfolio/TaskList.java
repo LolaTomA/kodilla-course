@@ -4,22 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskList {
-    List<String> tasks = new ArrayList<>();
-    String task;
+    private List<String> tasks;
 
-    public TaskList(List<String> tasks) {
-        this.tasks = tasks;
+    public TaskList() {
+        this.tasks = new ArrayList<>();
     }
 
-    public void addTask (){
-        tasks.add(task);
+    public void addTask (String task) {
+      tasks.add(task);
     }
 
     public List<String> getTasks() {
         return tasks;
     }
 
-    public String getTask() {
-        return task;
-    }
+
 }

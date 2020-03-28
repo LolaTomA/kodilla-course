@@ -17,16 +17,22 @@ public class BoardTestSuite {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Board board = context.getBean(Board.class);
-        TaskList taskList1 = (TaskList)context.getBean("taskList1");
-        TaskList taskList2 = (TaskList)context.getBean("taskList2");
-        TaskList taskList3 = (TaskList)context.getBean("taskList3");
+
 
         //When
-        board = new Board(taskList1, taskList2, taskList3);
+        board.getDoneList().addTask("ate ");
+        board.getDoneList().addTask("ate breakfast ");
+        board.getDoneList().addTask("ate egs on breakfast");
+        board.getInProgressList().addTask("bolek");
+        board.getInProgressList().addTask("bolek lolek");
+        board.getToDoList().addTask("car");
+
+
 
         //Then
-        Assert.assertEquals("to do", board.getToDoList().getTask());
-        Assert.assertEquals("in progress", board.getInProgressList().getTask());
-        Assert.assertEquals("task done", board.getDoneList().getTask());
+        Assert.assertEquals(3, board.getDoneList().getTasks().size());
+        Assert.assertEquals(2, board.getInProgressList().getTasks().size());
+        Assert.assertEquals(1, board.getToDoList().getTasks().size());
+
     }
 }

@@ -8,39 +8,32 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class BoardConfig {
-    String task;
-    @Autowired
-    @Qualifier("taskList1")
-    TaskList taskList;
-
 
     @Bean
     public Board getBoard(){
-        return new Board(taskList, taskList, taskList);
+        return new Board(getTaskList(),getTaskList(), getTaskList());
     }
 
-    @Bean(name = "taskList1")
+    @Bean
     @Scope("prototype")
-    public TaskList getTaskList1() {
-        task = "to do";
-        taskList.addTask();
-        return new TaskList(taskList.getTasks());
+    public TaskList getTaskList() {
+       return new TaskList();
     }
 
-    @Bean(name = "taskList2")
-    @Scope("prototype")
-    public TaskList getTaskList2(){
-        task = "in progress";
-        taskList.addTask();
-        return new TaskList(taskList.getTasks());
-    }
-
-    @Bean(name = "taskList3")
-    @Scope("prototype")
-    public TaskList getTaskList3(){
-        task = "task done";
-        taskList.addTask();
-        return new TaskList(taskList.getTasks());
-    }
+//    @Bean(name = "taskList2")
+//    @Scope("prototype")
+//    public TaskList getTaskList2(){
+//        task = "in progress";
+//        taskList.addTask();
+//        return new TaskList(taskList.getTasks());
+//    }
+//
+//    @Bean(name = "taskList3")
+//    @Scope("prototype")
+//    public TaskList getTaskList3(){
+//        task = "task done";
+//        taskList.addTask();
+//        return new TaskList(taskList.getTasks());
+//    }
 
 }
