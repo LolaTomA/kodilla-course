@@ -31,6 +31,7 @@ public class TaskList {
     public int getId() {
         return id;
     }
+
     @Column(name = "LISTNAME")
     public String getListName() {
         return listName;
